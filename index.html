@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>一個簡單的學習網站</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/my_style.css" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top">輕鬆學習化妝品小知識</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">關於本站</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#knowledge">隨機知識</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video_course">我要學習</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pratice">開始測驗</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#learn_more">更多資訊 ...</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">聯繫我們</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">歡迎來到本站!</h1>
+                <p class="lead">這是一個提供了關於化妝品知識的小網站</p>
+                
+                <a class="btn btn-lg btn-light" href="#about">認識網站</a>
+                <a class="btn btn-lg btn-light" href="#knowledge">隨機小知識</a>
+                <a class="btn btn-lg btn-light" href="#video_course">開始學習</a>
+                <a class="btn btn-lg btn-light" href="#pratice">快速測驗</a>
+                <a class="btn btn-lg btn-light" href="#learn_more">更進一步</a>
+                <a class="btn btn-lg btn-light" href="#contact">我要提問</a>
+            </div>
+        </header>
+
+        <!-- About section-->
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>關於本網站</h2>
+                        <p class="lead">本站面向於化妝品完全沒有概念的新手，提供</p>
+                        <ul>
+                            <li>認識化妝品基礎知識</li>
+                            <li>知道這些知識了嗎?來測驗看看吧!</li>
+                            <li>從衛福部食藥署得到更多資訊</li>
+                            <li>如有問題請聯繫作者</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- knowledge section-->
+        <section class="bg-light" id="knowledge">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>一天一知識</h2>
+                        <p class="lead">點擊按鈕獲取隨機小知識吧</p>
+                        <span id="showData"></span><br>
+                        <button id="knowledge_btn">點我看小知識</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- video_course section-->
+        <section class="bg-light" id="video_course">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>幾個短短小知識</h2>
+                        <p class="lead">點擊影片觀看內容吧</p>
+                        <table id="courseTable"></table><br>
+
+                        <h2 id="player_now"></h2>
+                        <div id="player"></div><br>
+                        <input id="playButton" type="button" value="play">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- pratice section-->
+        <section class="bg-light" id="pratice">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>開始測驗</h2>
+                        <p class="lead">此處應該有個按鈕可以跳到新視窗測驗(類似心理測驗)...</p>
+                        <a class="btn btn-lg btn-light" href="html/test.html">點我測驗</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- learn more section-->
+        <section class="bg-light" id="learn_more">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>更多資訊 ...</h2>
+                        <p class="lead">從這裡知道更多: https://www.fda.gov.tw/TC/site.aspx?sid=40&r=142192790</p>
+                        <a href="https://www.fda.gov.tw/TC/site.aspx?sid=40&r=142192790">衛生福利部食品藥物管理署</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact section-->
+        <section id="contact">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>聯繫我們</h2>
+                        <p class="lead">如果你有什麼問題，歡迎寄信發問:xxxxxxx@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Core theme JS-->
+        <script src="//unpkg.com/jquery"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+#courseTable{
+    width: 55%;
+    margin: auto;
+    font-size: 1.5em;
+
+    border-bottom: 3px solid #0d6efd  ;
+    
+}
+
+#player_now{
+    /*預留歌曲名稱顯示空間*/
+    height:32px;
+    font-size:medium;
+}
+
+#playButton{
+
+    text-align: center;
+}
