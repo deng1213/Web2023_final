@@ -138,7 +138,7 @@ function loadServerData(){
 
     if(window.XMLHttpRequest){
         xmlHttpRequest = new XMLHttpRequest();
-        //console.log(`readystate init:"${xmlHttpRequest.readyState}`);
+        console.log(`readystate init:"${xmlHttpRequest.readyState}`);
     }else{ 
         alert("No XMLHttpRequest!");
         return;
@@ -152,11 +152,11 @@ function loadServerData(){
     console.log("name:"+name);
 
     xmlHttpRequest.open("GET",name,true);
-    //console.log(`readystate send before:"${xmlHttpRequest.readyState}`);
+    console.log(`readystate send before:"${xmlHttpRequest.readyState}`);
     xmlHttpRequest.send();
     xmlHttpRequest.onreadystatechange = function(){
-        //console.log(`readystate after:"${xmlHttpRequest.readyState}`);
-        //console.log(`readystatus:"${xmlHttpRequest.status}`);
+        console.log(`readystate after:"${xmlHttpRequest.readyState}`);
+        console.log(`readystatus:"${xmlHttpRequest.status}`);
 
         //state==4:request&response     status==200:ok
         if( xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
