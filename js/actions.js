@@ -168,20 +168,44 @@ thisButton.addEventListener("click",loadServerData);
     }
 
 }*/
-function fetchKnowledgeData() {
-    return fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => data.knowledges)
-      .catch(error => console.error("發生錯誤：", error));
-}
+
+const knowledges = [
+    "化妝品是指施於人體外部、牙齒或口腔黏膜，用以潤澤髮膚、刺激嗅覺、改善體味、修飾容貌或清潔身體之製劑(依其他法令認屬藥物者除外)",
+    "在國外買的產品，以為是化妝品，實際上可能會是藥品、醫療器材或是一般商品。",
+    "一般的牙膏跟漱口水是化妝品喔。",
+    "已開封的不同品牌的洗髮精不建議倒在一起繼續用(沐浴乳也是)。",
+    "快用完的洗髮精不建議加水稀釋繼續用(沐浴乳也是)。",
+    "化妝品再塑形，可能造成細菌滋生的風險，忽冷忽熱加速產品質變。",
+    "化妝品是私人用品，不和人共享，衛生安全才更有保障。",
+    "透過化妝品「促進肌膚神經醯胺合成」很困難。",
+    "靠化妝品「促進(刺激)膠原蛋白合成或增生」太難了。",
+    "預防(消除)肥胖紋、橘皮組織都已涉及人體結構外觀改變，化妝品辦不到。",
+    "肥胖紋:脂肪快速增加時，皮膚組織過度伸展、彈性受到破壞，形成條狀紋路。",
+    "橘皮:脂肪堆積過剩，造成表面凹凸不平。",
+    "細胞老化死亡就回不去了，不要指望化妝品「讓皮膚細胞重生」。",
+    "洗臉劑泡泡多≠清潔夠。",
+    "只用清水洗臉是帶不走臉上油溶性髒污的。",
+    "乾洗髮不能代替洗髮精。",
+    "即使夏天肌膚易出油，還是需要保濕。",
+    "反覆使用噴霧式化妝水保濕，反而可能越噴越乾。",
+    "爆水霜不一定更保濕。",
+    "防曬無法完全防止紫外線傷害，還是要搭配物理性遮蔽及減少曝曬，才能較有效的防止曬傷、曬黑。",
+    "防曬劑上UVA常見標示方式「PA+」、「★」、「broad spectrum」，避免UVA可以預防肌膚老化、變黑、產生皺紋。",
+    "防曬劑上UVB常見標示方式「SPF」，避免UVB可以預防肌膚曬傷、變紅、暗沉。",
+    "一般日常生活，選擇SPF15-30就足夠。",
+    "面對電腦，室內燈光下不需要刻意使用防曬劑。",
+    "用火燒化粧品無法證明時劑添加成分的含量。",
+    "讓紙起皺或透光，不是測試化粧品的保濕力或是否含礦物油。",
+    "銀飾物無法證明化粧品中含鉛或汞。",
+    "化粧品讓碘酒便無色，不代表能美白。",
+    "有人說將精華液滴在化粧眠上，越容易往下滲透，表示越容易吸收。實際上，皮膚的構造跟化粧棉不一樣，一張化粧眠是無法判斷化粧品在肌膚上的吸收力的。",
+    "馬克筆/原子筆無法測出洗面乳的清潔力。",
+  ];
 
 function loadServerData(){
-    fetchKnowledgeData().then(knowledges => {
-        const randomIndex = Math.floor(Math.random() * knowledges.length);
-        const knowledge = knowledges[randomIndex];
-        const knowledgeContent = knowledge[`knowledge${randomIndex + 1}`];
-  
-        document.getElementById("show_knowledge").textContent = knowledgeContent;
-      });
+    const randomIndex = Math.floor(Math.random() * knowledges.length);
+    const knowledge = knowledges[randomIndex];
+
+    document.getElementById("show_knowledge").textContent = knowledge;
 
 }
