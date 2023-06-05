@@ -111,6 +111,8 @@ function onPlayerStateChange(event){
 
 //kenowledge
 let knowledge_length=30;
+const apiUrl = "http://web-final.azurewebsites.net/knowledges";
+
 let thisButton = document.getElementById("knowledge_btn");
 let showData = document.getElementById("showData");
 
@@ -165,35 +167,21 @@ thisButton.addEventListener("click",loadServerData);
         }
     }
 
-
 }*/
-function loadServerData() {
-    console.log("Load Server Data!");
+function fetchKnowledgeData() {
+    return fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => data.knowledges)
+      .catch(error => console.error("發生錯誤：", error));
+}
+
+function loadServerData(){
+    fetchKnowledgeData().then(knowledges => {
+        const randomIndex = Math.floor(Math.random() * knowledges.length);
+        const knowledge = knowledges[randomIndex];
+        const knowledgeContent = knowledge[`knowledge${randomIndex + 1}`];
   
-    var numberOflistitem = knowledge_length;
-  
-    // Math.random() : the number between 0~1
-    // *3  -> the number between 0~3
-    var randomChildnumber = Math.floor(Math.random() * numberOflistitem);
-  
-    if (window.fetch) {
-      fetch('https://raw.githubusercontent.com/deng1213/Web2023_final/main/knowledgeData.json')
-        .then(response => response.json())
-        .then(data => {
-          let knowledgeData = data;
-          let randomKnowledgeIndex = Math.floor(Math.random() * knowledgeData.length);
-          let knowledgeKey = knowledgeData[randomKnowledgeIndex];
-  
-          fetch('https://raw.githubusercontent.com/deng1213/Web22023_final/main/' + knowledgeKey + '.txt')
-            .then(response => response.text())
-            .then(text => {
-              showData.innerHTML = text;
-            })
-            .catch(error => console.log(error));
-        })
-        .catch(error => console.log(error));
-    } else {
-      alert("Fetch API is not supported in this browser!");
-      return;
-    }
-  }
+        document.getElementById("show_knowledge").textContent = knowledgeContent;
+      });
+
+}
