@@ -116,7 +116,7 @@ let showData = document.getElementById("showData");
 
 thisButton.addEventListener("click",loadServerData);
 
-function loadServerData(){
+/*function loadServerData(){
     console.log("Load Server Data!");
     let xmlHttpRequest;
     let past=-1;
@@ -166,4 +166,34 @@ function loadServerData(){
     }
 
 
-}
+}*/
+function loadServerData() {
+    console.log("Load Server Data!");
+  
+    var numberOflistitem = knowledge_length;
+  
+    // Math.random() : the number between 0~1
+    // *3  -> the number between 0~3
+    var randomChildnumber = Math.floor(Math.random() * numberOflistitem);
+  
+    if (window.fetch) {
+      fetch('https://raw.githubusercontent.com/deng1213/Web2023_final/main/knowledgeData.json')
+        .then(response => response.json())
+        .then(data => {
+          let knowledgeData = data;
+          let randomKnowledgeIndex = Math.floor(Math.random() * knowledgeData.length);
+          let knowledgeKey = knowledgeData[randomKnowledgeIndex];
+  
+          fetch('https://raw.githubusercontent.com/deng1213/Web22023_final/main/' + knowledgeKey + '.txt')
+            .then(response => response.text())
+            .then(text => {
+              showData.innerHTML = text;
+            })
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    } else {
+      alert("Fetch API is not supported in this browser!");
+      return;
+    }
+  }
