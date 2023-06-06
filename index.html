@@ -40,7 +40,7 @@
                 <a class="btn btn-lg btn-light" href="#about">認識網站</a>
                 <a class="btn btn-lg btn-light" href="#knowledge">隨機小知識</a>
                 <a class="btn btn-lg btn-light" href="#video_course">開始學習</a>
-                <a class="btn btn-lg btn-light" href="#pratice">快速測驗</a>
+                <a class="btn btn-lg btn-light" href="#pratice">進行測驗</a>
                 <a class="btn btn-lg btn-light" href="#learn_more">更進一步</a>
                 <a class="btn btn-lg btn-light" href="#contact">我要提問</a>
             </div>
@@ -52,7 +52,7 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>關於本網站</h2>
-                        <p class="lead">本站面向於化妝品完全沒有概念的新手，提供</p>
+                        <p class="lead">本站面向於化妝品完全沒有概念的新手，提供實用的知識並解答迷思。</p>
                         <ul>
                             <li>認識化妝品基礎知識</li>
                             <li>知道這些知識了嗎?來測驗看看吧!</li>
@@ -86,7 +86,7 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
-                        <h2>幾個短短小知識</h2>
+                        <h2>一分鐘內學習小知識</h2>
                         <p class="lead">點擊影片觀看內容吧</p>
                         <table id="courseTable"></table><br>
 
@@ -105,7 +105,7 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>開始測驗</h2>
-                        <p class="lead"></p>
+                        <p class="lead">如果你準備好了，點擊下方按鈕測試自己實力吧!</p>
                         <a class="btn btn-lg btn-light" href="html/test.html">點我測驗</a>
 
                     </div>
@@ -135,7 +135,29 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2>聯繫我們</h2>
-                        <p class="lead">如果你有什麼問題，歡迎寄信發問:xxxxxxx@gmail.com</p>
+                        <p class="lead">如果你有什麼問題，歡迎寄信發問。</p>
+                        <form   enctype="text/plain" accept-charset="utf-8">
+                            <!-- 寄件者姓名    -->
+                             <input id="nameText" type="text" name="Name"  value size="60" placeholder="你的名字(Your name)" required>  <!-- required 必填欄位 ，placeholder 預設內容--> 
+                             
+                             <!-- 寄件者email -->
+                             <input id="emailText" type="email" name="Email"  value size="60" placeholder="你的信箱(Your Email)" required>
+                             
+                             <!-- 寄件者電話 -->
+                             <input id="telText"type="tel" name="Phone"  value size="60" aria-invalid="false" placeholder="你的電話(Your phone)" required>
+                             
+                             <!-- 郵件主旨 -->
+                             <input  id="subText" type="text" name="Subject"  value size="60" aria-invalid="false" placeholder="主旨(subject)" required>
+                                     
+                             <!-- 郵件內容 -->
+                             <textarea id="bodyText" name="your-message" cols="40" rows="10"  aria-required="true" aria-invalid="false" placeholder="你的訊息(Your Message)" required></textarea>
+                             
+                             <!-- 傳送按鈕 -->
+                             <div>
+                                 <input type="button" value="送出訊息" onclick="submitHandler();">
+                                 <a id="mailTo"></a>
+                             </div>
+                         </form>
                     </div>
                 </div>
             </div>
@@ -152,5 +174,6 @@
         <script src="https://www.youtube.com/iframe_api"></script>
         <script src="js/actions.js"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/email.js"></script>
     </body>
 </html>
